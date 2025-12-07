@@ -2,6 +2,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import React from "react";
+import Link from "next/link";
 import RegisterForm from "../../components/auth/RegisterForm";
 
 type RegisterState = {
@@ -135,6 +136,17 @@ export default function RegisterPage() {
 					<p className="mt-1 text-sm text-zinc-500">Start your journey with Xeno Analytics</p>
 				</div>
 				<RegisterForm action={registerAction} />
+
+				<div className="mt-4 text-center text-sm text-zinc-500">
+					Already have an account?{" "}
+					<Link
+						href="/login"
+						className="font-medium text-zinc-900 hover:underline dark:text-zinc-50"
+					>
+						Sign in
+					</Link>
+				</div>
+
 				<p className="mt-6 text-center text-xs text-zinc-500">
 					By creating an account, you agree to our Terms and Privacy Policy.
 				</p>

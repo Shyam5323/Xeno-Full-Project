@@ -2,6 +2,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import React from "react";
+import Link from "next/link";
 import LoginForm from "@/components/auth/LoginForm";
 
 // Types for server action state and API response
@@ -129,6 +130,17 @@ export default function LoginPage() {
           </p>
         </div>
         <LoginForm action={loginAction} />
+
+        <div className="mt-4 text-center text-sm text-zinc-500">
+          Don&apos;t have an account?{" "}
+          <Link
+            href="/register"
+            className="font-medium text-zinc-900 hover:underline dark:text-zinc-50"
+          >
+            Sign up
+          </Link>
+        </div>
+
         <p className="mt-6 text-center text-xs text-zinc-500">
           By signing in, you agree to our Terms and Privacy Policy.
         </p>
